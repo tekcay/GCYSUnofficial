@@ -412,6 +412,9 @@ gcys.multiblock.turbomolecular_pump.tooltip.1=Decreases pressure by §b%sPa/s§7
 gcys.multiblock.turbomolecular_pump.tooltip.2=Consumes §e%sL/s§7 Lubricant when decreasing pressure.
 gcys.multiblock.turbomolecular_pump.tooltip.3=Uses %s§7 power. Does not overclock.
 
+# CZ_Puller
+gcys.machine.cz_puller.name=CZ Puller
+
 # Single Block Machines
 
 gcys.machine.dryer.lv.name=Basic Dryer
@@ -721,6 +724,7 @@ recipemap.sonication_recipes.name=Sonication
 recipemap.ion_implanter_recipes.name=Ion Implantation
 recipemap.superheavy_reactor_recipes.name=Superheavy Reactions
 recipemap.drill_recipes.name=Drilling
+recipemap.czpuller_recipes.name=CZochralski Zone
 
 # Generators
 recipemap.taranium_reactor_mk1_recipes.name=Taranium Reactor Mk.1

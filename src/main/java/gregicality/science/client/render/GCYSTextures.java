@@ -31,6 +31,8 @@ public class GCYSTextures {
     public static OrientedOverlayRenderer LOW_POWER_TURBOMOLECULAR_PUMP = new OrientedOverlayRenderer("multiblock/low_power_turbomolecular_pump");
     public static OrientedOverlayRenderer HIGH_POWER_TURBOMOLECULAR_PUMP = new OrientedOverlayRenderer("multiblock/high_power_turbomolecular_pump");
 
+    public static OrientedOverlayRenderer CZ_PULLER = new OrientedOverlayRenderer("multiblock/cz_puller");
+
     //public static OrientedOverlayRenderer MASS_NULLIFIER_PLATFORM = new OrientedOverlayRenderer("casings/mass_nullifier_platform");
 
     public static TextureAtlasSprite PRESSURE_PIPE_SIDE;

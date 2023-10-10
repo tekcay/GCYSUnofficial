@@ -32,7 +32,7 @@ public class GCYSConfigHolder {
         public boolean disableNiobiumTantalumProcessing = true;
 
         @Config.Comment({"Disables production of Ammonia from Nitrogen and Hydrogen, requiring Gregicality's process.", "Default: false"})
-        public boolean disableAmmoniaProcessing = false;
+        public boolean disableAmmoniaProcessing = true;
 
         @Config.Comment({"Disables electrolysis of Molybdenite, Powellite, and Wulfenite, requiring Gregicality's processes for Molybdenum.", "Default: true"})
         public boolean disableMolybdenumProcessing = true;
@@ -41,7 +41,7 @@ public class GCYSConfigHolder {
     public static class CircuitOverrides {
 
         @Config.Comment({"Requires Steam-Tier Vacuum Equipment in order to produce Vacuum Tubes, instead of just crafting.", "Default: true"})
-        public boolean harderVacuumTubes = true;
+        public boolean harderVacuumTubes = false;
 
         @Config.Comment({"Requires Cubic Zirconia and more components in order to produce Crystal SOCs, instead of just Crystal CPUs.", "Default: true"})
         public boolean harderCrystalCircuits = true;

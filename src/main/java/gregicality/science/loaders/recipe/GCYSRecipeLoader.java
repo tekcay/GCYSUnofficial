@@ -51,6 +51,7 @@ public class GCYSRecipeLoader {
         FantasyMaterials.init();
         SimpleMaterials.init();
         PedotChain.init();
+        BoulesRecipes.init();
     }
 
     private static void initOreProcessing() {
