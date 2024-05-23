@@ -3,6 +3,7 @@ package gregicality.science.common.pipelike.pressure.net;
 import gregicality.science.common.pipelike.pressure.tile.TileEntityPressurePipe;
 import gregtech.api.pipenet.PipeNetWalker;
 import gregtech.api.pipenet.tile.IPipeTile;
+import gregtech.common.pipelike.optical.tile.TileEntityOpticalPipe;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -10,7 +11,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class PressureNetWalker extends PipeNetWalker {
+public class PressureNetWalker extends PipeNetWalker<TileEntityPressurePipe> {
 
     private double pressure = -1;
 
@@ -25,25 +26,25 @@ public class PressureNetWalker extends PipeNetWalker {
     }
 
     @Override
-    protected PipeNetWalker createSubWalker(World world, EnumFacing enumFacing, BlockPos blockPos, int i) {
+    protected PipeNetWalker<TileEntityPressurePipe> createSubWalker(World world, EnumFacing enumFacing, BlockPos blockPos, int i) {
         PressureNetWalker walker = new PressureNetWalker(world, blockPos, i);
         walker.pressure = pressure;
         return walker;
     }
 
     @Override
-    protected void checkPipe(IPipeTile<?, ?> iPipeTile, BlockPos blockPos) {
-        TileEntityPressurePipe pipe = (TileEntityPressurePipe) iPipeTile;
-        pipe.checkPressure(pressure);
+    protected void checkPipe(TileEntityPressurePipe pipeTile, BlockPos pos) {
+        ((TileEntityPressurePipe) pipeTile).checkPressure(pressure);
     }
 
     @Override
-    protected void checkNeighbour(IPipeTile<?, ?> iPipeTile, BlockPos blockPos, EnumFacing enumFacing, @Nullable TileEntity tileEntity) {
+    protected void checkNeighbour(TileEntityPressurePipe pipeTile, BlockPos pipePos, EnumFacing faceToNeighbour, @org.jetbrains.annotations.Nullable TileEntity neighbourTile) {
 
     }
 
     @Override
-    protected boolean isValidPipe(IPipeTile<?, ?> iPipeTile, IPipeTile<?, ?> iPipeTile1, BlockPos blockPos, EnumFacing enumFacing) {
-        return iPipeTile1 instanceof TileEntityPressurePipe;
+    protected Class<TileEntityPressurePipe> getBasePipeClass() {
+        return TileEntityPressurePipe.class;
     }
+
 }
