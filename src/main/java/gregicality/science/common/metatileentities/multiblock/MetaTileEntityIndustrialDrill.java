@@ -31,6 +31,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.items.IItemHandlerModifiable;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -94,7 +95,7 @@ public class MetaTileEntityIndustrialDrill extends RecipeMapMultiblockController
     @Override
     protected void initializeAbilities() {
         super.initializeAbilities();
-        this.inputInventory = new NotifiableItemStackHandler(1, this, false);
+        this.inputInventory = new NotifiableItemStackHandler(this, 1, this, false);
     }
 
     @Override
@@ -124,7 +125,7 @@ public class MetaTileEntityIndustrialDrill extends RecipeMapMultiblockController
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
+    public void addInformation(ItemStack stack, @Nullable World player, @NotNull List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gcys.multiblock.industrial_drill.tooltip.1"));
         tooltip.add(I18n.format("gcys.multiblock.industrial_drill.tooltip.2"));
@@ -137,7 +138,7 @@ public class MetaTileEntityIndustrialDrill extends RecipeMapMultiblockController
         }
 
         @Override
-        public MetaTileEntityIndustrialDrill getMetaTileEntity() {
+        public @NotNull MetaTileEntityIndustrialDrill getMetaTileEntity() {
             return (MetaTileEntityIndustrialDrill) super.getMetaTileEntity();
         }
 

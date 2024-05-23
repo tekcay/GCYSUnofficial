@@ -14,6 +14,7 @@ import gregtech.api.GTValues;
 import gregtech.api.capability.GregtechDataCodes;
 import gregtech.api.capability.GregtechTileCapabilities;
 import gregtech.api.capability.IActiveOutputSide;
+import gregtech.api.capability.impl.CommonFluidFilters;
 import gregtech.api.capability.impl.FilteredFluidHandler;
 import gregtech.api.capability.impl.FluidTankList;
 import gregtech.api.gui.GuiTextures;
@@ -87,7 +88,7 @@ public class MetaTileEntitySteamEjector extends MetaTileEntity implements IDataI
     protected FluidTankList createImportFluidHandler() {
         FluidTankList superHandler = super.createImportFluidHandler();
         this.fuelFluidTank = new FilteredFluidHandler(16000)
-                .setFillPredicate(fs -> fs.getFluid() == Materials.Steam.getFluid());
+                .setFilter(CommonFluidFilters.STEAM);
         return new FluidTankList(false, superHandler, fuelFluidTank);
     }
 
