@@ -733,7 +733,7 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.MAGNETIC)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD)
                 .components(Neptunium, 1, Aluminium, 3)
-                .blast(1568, BlastProperty.GasTier.HIGHER)
+                .blast(builder -> builder.temp(1568, BlastProperty.GasTier.HIGHER).blastStats(GTValues.VA[GTValues.ZPM]))
                 .build()
                 .setFormula("NpAl3", true);
 
