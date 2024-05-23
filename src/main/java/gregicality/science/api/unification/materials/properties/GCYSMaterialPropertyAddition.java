@@ -2,6 +2,7 @@ package gregicality.science.api.unification.materials.properties;
 
 
 import gregtech.api.GTValues;
+import gregtech.api.fluids.store.FluidStorageKey;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.*;
 
@@ -32,15 +33,16 @@ public class GCYSMaterialPropertyAddition {
         Rhenium.setProperty(PropertyKey.INGOT, new IngotProperty());
 
         // Blast
-        Germanium.setProperty(PropertyKey.BLAST, new BlastProperty(1211, BlastProperty.GasTier.HIGH, GTValues.VA[GTValues.EV], 1200));
+        Germanium.setProperty(PropertyKey.BLAST, new BlastProperty(1211, BlastProperty.GasTier.HIGH));
+        Germanium.getProperty(PropertyKey.BLAST).setDurationOverride(1200);
+        Germanium.getProperty(PropertyKey.BLAST).setEutOverride(GTValues.VA[GTValues.EV]);
 
         // Fluids
         Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());
         Bromine.setMaterialIconSet(MaterialIconSet.FLUID);
         Germanium.setProperty(PropertyKey.FLUID, new FluidProperty());
-        FluidProperty prop = new FluidProperty();
-        prop.setFluidTemperature(332);
-        SodiumBisulfate.setProperty(PropertyKey.FLUID, prop);
+        SodiumBisulfate.setProperty(PropertyKey.FLUID, new FluidProperty());
+        SodiumBisulfate.getFluid().setTemperature(332);
 
         // Ore Byproducts
         //TODO Fix ore byproduct changes

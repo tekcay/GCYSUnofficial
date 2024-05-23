@@ -278,7 +278,7 @@ public class MetaTileEntityFracker extends MultiblockWithDisplayBase implements 
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gcys.multiblock.fracker.tooltip.1"));
-        tooltip.add(I18n.format("gcys.multiblock.fracker.tooltip.2", GTUtility.formatNumbers(GTValues.VA[tier])));
+        tooltip.add(I18n.format("gcys.multiblock.fracker.tooltip.2", TextFormattingUtil.formatNumbers(GTValues.VA[tier])));
     }
 
     @Override
